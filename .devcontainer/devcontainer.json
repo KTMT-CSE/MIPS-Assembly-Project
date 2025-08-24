@@ -1,0 +1,26 @@
+{
+    "name": "KTMT_VO_TIEN",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "runArgs": [
+        "--name=KTMT_VO_TIEN",
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined"
+    ],
+    "extensions": [
+        "ms-python.python",
+        "vscjava.vscode-java-pack",
+        "mhutchie.git-graph",
+        "tommo603.better-mips"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "forwardPorts": [],
+    "postStartCommand": "bash .devcontainer/banner.sh"
+}
